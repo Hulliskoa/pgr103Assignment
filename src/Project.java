@@ -9,7 +9,9 @@ public class Project implements Comparable{
     private LocalDate startDate, endDate;
 
     public Project(String projectName, String customerName, Address projectAddress, LocalDate startDate, LocalDate endDate) {
-        this(projectName, customerName, projectAddress);
+        this.projectName = projectName;
+        this. customerName = customerName;
+        this. projectAddress = projectAddress;
         this.startDate = startDate;
         this.endDate = endDate;
         System.out.println("Project created with date..");

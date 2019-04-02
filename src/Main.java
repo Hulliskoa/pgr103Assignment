@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -7,7 +8,7 @@ public class Main {
         Address customer1Address = new Address("Korhal street 10", "Oslo", "TarKossia","2048");
         Address customer2Address = new Address("Farm road 1", "Village on Shiloh", "Shiloh","1337");
 
-        //objects for start and end dates
+        //objects for project start and end dates
         LocalDate project1StartDate = LocalDate.of(2020,12,24);
         LocalDate project2StartDate = LocalDate.of(2020,9,20);
         LocalDate project1EndDate = LocalDate.of(2025,1,27);
@@ -24,7 +25,23 @@ public class Main {
 
         //Worker objects
         Plumber plumber = new Plumber("Arcturus", "Mengsk", plumber1Address, 587, 30, 45);
-        Electrician electrician = new Electrician("Arcturus", "Mengsk", electricianAddress, 587, 30, 45);
-        Carpenter carpenter = new Carpenter("Arcturus", "Mengsk", carpenterAddress, 587, 30, 45);
+        Electrician electrician = new Electrician("Matt", "Horner", electricianAddress, 884, 45, 20);
+        Carpenter carpenter = new Carpenter("Tychus", "Findlay", carpenterAddress, 445, 10, 30);
+
+
+        ArrayList<Worker> workers = new ArrayList<>();
+
+        workers.add(plumber);
+        workers.add(electrician);
+        workers.add(carpenter);
+
+        carpenter.setLumberCost(1200);
+        plumber.setPlumbingCosts(2500);
+        electrician.setWiringCosts(5000);
+
+        newHouse.addWorkers(workers);
+        newHouse.setOverheadPercent(.18);
+
+        System.out.printf(newHouse.toString(), newHouse.getName(), newHouse.getTotalCost(), newHouse.getOverhead());
     }
 }
