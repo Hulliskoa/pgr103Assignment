@@ -15,6 +15,10 @@ public class Address {
 
     @Override
     public String toString(){
-        return "Street: " + street1 +" " + street2 + "City: " + city + "State: " + state + "Zip: " + zip;
+        if(street2 == null) {
+            return "Street: " + street1 + "\n" + "City: " + city + "\n" + "State: " + state + "\n" + "Zip: " + zip;
+        }else{
+            return "Street: " + street1 + "\n" + street2 + "\n" + "City: " + city + "\n" +"State: " + state + "\n" + "Zip: " + zip;
+        }
     }
 }
